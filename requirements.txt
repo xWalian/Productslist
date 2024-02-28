@@ -1,0 +1,11 @@
+fastapi~=0.110.0
+sqlalchemy~=2.0.25
+sqlmodel~=0.0.16
+uvicorn~=0.27.1
+psycopg2~=2.9.9
+typing_extensions~=4.9.0
+passlib~=1.7.4
+pydantic~=2.6.2
+starlette~=0.36.3
+bcrypt~=3.2.0
+python-jose~=3.3.0
