@@ -1,0 +1,28 @@
+<h1>Products</h1>
+<div>
+  <input type="text" placeholder="Search..." [(ngModel)]="searchQuery">
+  <button (click)="search()">Search</button>
+</div>
+
+<div *ngIf="pagedProducts.length > 0; else noResults">
+  <div *ngFor="let product of pagedProducts">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price }}</p>
+    <div *ngIf="isLoggedIn()">
+    <form (ngSubmit)="addToCart(product)" [formGroup]="productForm">
+      <p><input type="number" id="quantity" placeholder="insert quantity" min="1" formControlName="quantity"></p>
+      <button type="submit">Add to cart</button>
+    </form>
+  </div>
+  </div>
+
+  <div>
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
+
+<ng-template #noResults>
+  <p>No results found.</p>
+</ng-template>

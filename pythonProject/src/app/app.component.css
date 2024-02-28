@@ -1,0 +1,22 @@
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+    background-color: gray;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .nav-item {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .nav-item a.active {
+    font-weight: bold;
+  }
+  

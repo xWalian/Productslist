@@ -1,0 +1,21 @@
+<nav>
+  <ul class="nav-list">
+    <li class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li class="nav-item"><a routerLink="/products" routerLinkActive="active">Products</a></li>
+    <li class="nav-item" *ngIf="appService.isLoggedIn"><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
+    <li class="nav-item" *ngIf="!appService.isLoggedIn"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li class="nav-item" *ngIf="!appService.isLoggedIn"><a routerLink="/register" routerLinkActive="active">Register</a></li>
+    <li class="nav-item" *ngIf="appService.isLoggedIn"><a routerLink="/control-panel" routerLinkActive="active">Panel</a></li>
+    <li class="nav-item" *ngIf="appService.isLoggedIn">Welcome {{getUsername()}}</li>
+    <li class="nav-item" *ngIf="appService.isLoggedIn"><button (click)="logout()">Logout</button></li>
+  </ul>
+</nav>
+<div >
+  <div class="container">
+    <div class="row">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

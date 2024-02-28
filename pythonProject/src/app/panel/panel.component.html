@@ -1,0 +1,7 @@
+<h1>Controll Panel</h1>
+<div *ngFor="let order of userOrders">
+  <form (click)="deleteOrder(order.id)">
+    <p>Order number: {{ order.id }} Status: {{ order.status }}</p>
+      <button type="submit">Delete Order</button>
+    </form>
+</div>
